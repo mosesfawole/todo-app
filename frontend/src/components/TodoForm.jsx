@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { createTodo } from "../features/todos/todoSlice";
 const TodoForm = () => {
@@ -8,6 +9,9 @@ const TodoForm = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
+    if (text === "") {
+      toast.error("Please enter a text");
+    }
     setText("");
 
     dispatch(createTodo({ text }));
