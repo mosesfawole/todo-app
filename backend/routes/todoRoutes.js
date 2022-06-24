@@ -1,19 +1,13 @@
 const express = require("express");
 const router = express.Router();
+const {
+  getTodos,
+  setTodo,
+  updateTodo,
+  deleteTodo,
+} = require("../controllers/todoController");
 
-router.get("/", (req, res) => {
-  res.status(200).json({ message: "Get todos" });
-});
+router.route("/").get(getTodos).post(setTodo);
+router.route("/:id").put(updateTodo).delete(deleteTodo);
 
-router.post("/", (req, res) => {
-  res.status(200).json({ message: "Set todo" });
-});
-
-router.put("/:id", (req, res) => {
-  res.status(200).json({ message: `Update todo ${req.params.id}` });
-});
-
-router.delete("/:id", (req, res) => {
-  res.status(200).json({ message: `Delete todo ${req.params.id}` });
-});
 module.exports = router;
