@@ -86,26 +86,29 @@ h3 {
   color: #828282;
 }
 
-.goals {
+.todos {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
 }
 
-.goal {
+.todo {
   background-color: #f4f4f4;
   margin: 10px 0;
   padding: 20px 0 10px;
   position: relative;
 }
 
-.goal .close {
+.todo .close {
   position: absolute;
   top: 10px;
   right: 15px;
   cursor: pointer;
   border: none;
   background: none;
+}
+.todo-text {
+  cursor: pointer;
 }
 
 .form,

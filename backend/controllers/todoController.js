@@ -32,7 +32,7 @@ const setTodo = asyncHandler(async (req, res) => {
 // @route PUT /api/todos
 // @access Private
 const updateTodo = asyncHandler(async (req, res) => {
-  const todo = Todo.findById(req.params.id);
+  const todo = await Todo.findById(req.params.id);
 
   if (!todo) {
     res.status(400);
@@ -47,6 +47,7 @@ const updateTodo = asyncHandler(async (req, res) => {
 
   // make sure the logged in user matches todo user
   if (todo.user.toString() !== req.user.id) {
+    res.status(401);
     throw new Error("User not authorized");
   }
   const updatedTodo = await Todo.findByIdAndUpdate(req.params.id, req.body, {
