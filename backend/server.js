@@ -15,8 +15,10 @@ app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 
 const todoRoutes = require("./routes/todoRoutes");
+const userRoutes = require("./routes/userRoutes");
 
 app.use("/api/todos", todoRoutes);
+app.use("/api/users", userRoutes);
 
 app.use(errorHandler);
 

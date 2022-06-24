@@ -1,5 +1,4 @@
-const { default: mongoose } = require("mongoose");
-const mogoose = require("mongoose");
+const mongoose = require("mongoose");
 
 const userSchema = mongoose.Schema(
   {
@@ -18,7 +17,7 @@ const userSchema = mongoose.Schema(
     },
   },
   {
-    timsestamps: true,
+    timestamps: true,
   }
 );
 
