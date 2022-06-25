@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { FaSignInAlt } from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { login, reset } from "../features/auth/authSlice";
 import Spinner from "../components/Spinner";
@@ -83,7 +83,10 @@ const Login = () => {
               onChange={onChange}
             />
           </div>
-
+          <h3>
+            Don't have an account ?
+            <Link to="/register">Click here to register </Link>`
+          </h3>
           <div className="form-group">
             <button type="submit" className="btn btn-block">
               Submit
