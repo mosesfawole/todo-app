@@ -98,7 +98,9 @@ h3 {
   padding: 20px 0 10px;
   position: relative;
 }
-
+.link {
+  color: blue;
+}
 .todo .close {
   position: absolute;
   top: 10px;

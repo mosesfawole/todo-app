@@ -85,7 +85,10 @@ const Login = () => {
           </div>
           <h3>
             Don't have an account ?
-            <Link to="/register">Click here to register </Link>`
+            <Link to="/register" className="link">
+              Click here to register{" "}
+            </Link>
+            `
           </h3>
           <div className="form-group">
             <button type="submit" className="btn btn-block">
